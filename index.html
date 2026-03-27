@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>HPMMB</title>
+    
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HPMMB - Official Website</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        /* COLOR SCHEME: HIJAU TUA, PUTIH, HITAM */
+        :root {
+            --primary-dark-green: #1a5f2a;
+            --primary-green: #2d7d40;
+            --white: #ffffff;
+            --black: #000000;
+            --dark-gray: #333333;
+            --light-gray: #f8f9fa;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background: linear-gradient(135deg, var(--primary-dark-green), var(--primary-green)); 
+            color: var(--dark-gray);
+            overflow-x: hidden;
+        }
+        
+        header { 
+            background: rgba(255,255,255,0.95); 
+            backdrop-filter: blur(10px); 
+            padding: 20px; 
+            text-align: center; 
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .logo-container { display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 10px; }
+        .logo { 
+            width: 80px; height: 80px; 
+            border-radius: 50%; 
+            border: 4px solid var(--primary-dark-green); 
+            animation: spin 20s linear infinite;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        header h1 { color: var(--primary-dark-green); font-size: 2.5em; font-weight: 700; }
+        header p { color: var(--dark-gray); font-size: 1.2em; }
+        
+        nav { 
+            background: var(--black); 
+            padding: 15px; 
+            text-align: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 100;
+        }
+        nav a { 
+            color: var(--white); 
+            margin: 0 20px; 
+            text-decoration: none; 
+            font-weight: 500; 
+            transition: all 0.3s; 
+        }
+        nav a:hover { 
+            color: var(--primary-green); 
+            transform: scale(1.1); 
+        }
+        
+        section { 
+            padding: 40px 20px; 
+            max-width: 1200px; 
+            margin: 30px auto; 
+            background: rgba(255,255,255,0.95); 
+            backdrop-filter: blur(20px); 
+            border-radius: 20px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            animation: floatSection 8s ease-in-out infinite;
+        }
+        @keyframes floatSection {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        h2 { 
+            color: var(--primary-dark-green); 
+            text-align: center; 
+            margin-bottom: 30px; 
+            font-size: 2em; 
+        }
+        
+        .btn-wa { 
+            display: inline-block; 
+            background: var(--primary-green); 
+            color: var(--white); 
+            padding: 15px 30px; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: 600; 
+            margin: 10px; 
+            transition: all 0.3s; 
+            animation: pulse 2s infinite;
+            border: 2px solid var(--primary-dark-green);
+        }
+        @keyframes pulse { 
+            0% { box-shadow: 0 0 0 0 rgba(45,125,64,0.7); } 
+            70% { box-shadow: 0 0 0 20px rgba(45,125,64,0); } 
+            100% { box-shadow: 0 0 0 0 rgba(45,125,64,0); } 
+        }
+        .btn-wa:hover { 
+            transform: scale(1.05); 
+            background: var(--primary-dark-green);
+        }
+        
+        /* PENGURUS GRID - LENGKAP */
+        .pengurus-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 20px; 
+            margin: 20px 0; 
+        }
+        .pengurus-card { 
+            display: flex; 
+            align-items: center; 
+            gap: 15px; 
+            background: var(--white); 
+            padding: 20px; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border: 1px solid var(--light-gray);
+        }
+        .pengurus-card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 20px 40px rgba(26,95,42,0.2); 
+        }
+        .pengurus-foto { 
+            width: 60px; 
+            height: 60px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            border: 3px solid var(--primary-green); 
+        }
+        .pengurus-info h4 { 
+            color: var(--primary-dark-green); 
+            margin-bottom: 5px; 
+            font-size: 1.1em;
+        }
+        .pengurus-info p { 
+            color: var(--dark-gray); 
+            font-size: 0.9em; 
+        }
+        
+        .quick-links { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 20px; 
+            margin: 20px 0; 
+        }
+        .quick-card { 
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-dark-green)); 
+            padding: 25px; 
+            border-radius: 15px; 
+            text-align: center; 
+            color: var(--white); 
+            cursor: pointer;
+            transition: all 0.3s; 
+            animation: bounce 3s infinite; 
+            min-width: 250px;
+            box-shadow: 0 10px 30px rgba(26,95,42,0.3);
+        }
+        .quick-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(26,95,42,0.4);
+        }
+        @keyframes bounce { 
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 
+            40% { transform: translateY(-10px); } 
+            60% { transform: translateY(-5px); } 
+        }
+        
+        .kegiatan-modal { 
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0; 
+            top: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: rgba(0,0,0,0.9); 
+        }
+        .modal-content { 
+            position: relative; 
+            margin: 5% auto; 
+            padding: 20px; 
+            max-width: 900px; 
+            max-height: 80vh;
+            overflow-y: auto;
+            background: var(--white);
+            border-radius: 15px;
+        }
+        .close { 
+            color: var(--dark-gray); 
+            position: absolute; 
+            top: 15px; 
+            right: 25px; 
+            font-size: 35px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            z-index: 1001;
+        }
+        .close:hover { color: var(--primary-dark-green); }
+        
+        .kegiatan-item { 
+            display: flex; 
+            gap: 20px; 
+            margin: 20px 0; 
+            padding: 20px; 
+            background: var(--light-gray); 
+            border-radius: 15px; 
+            cursor: pointer; 
+            transition: all 0.3s; 
+            border-left: 5px solid var(--primary-green);
+        }
+        .kegiatan-item:hover { 
+            background: var(--primary-green); 
+            color: var(--white);
+            transform: scale(1.02); 
+        }
+        .kegiatan-gambar { 
+            width: 150px; 
+            height: 150px; 
+            object-fit: cover; 
+            border-radius: 10px; 
+        }
+        
+        ul { list-style: none; padding: 0; }
+        ul li { 
+            background: var(--light-gray); 
+            margin: 10px 0; 
+            padding: 15px; 
+            border-radius: 10px; 
+            border-left: 5px solid var(--primary-green); 
+            transition: all 0.3s; 
+        }
+        ul li:hover { 
+            transform: translateX(10px); 
+            box-shadow: 0 5px 15px rgba(45,125,64,0.3); 
+        }
+        
+        footer { 
+            background: var(--black); 
+            color: var(--white); 
+            text-align: center; 
+            padding: 30px; 
+            margin-top: 50px;
+        }
+        footer a { 
+            color: var(--primary-green); 
+            text-decoration: none; 
+        }
+        
+        @media (max-width: 768px) {
+            .pengurus-card { flex-direction: column; text-align: center; }
+            .quick-links { flex-direction: column; align-items: center; }
+            .kegiatan-item { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="https://i.ibb.co.com/kgXjb7fp/1000009971-removebg-preview-1.png" alt="1000009971-removebg-preview-1" border="0"></a>
+            <div>
+                <h1>HPMMB Maluk-Benete</h1>
+                <p>Himpunan Pelajar Mahasiswa Maluk-Benete</p>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <a href="#tentang">Tentang</a>
+        <a href="#visi-misi">Visi Misi</a>
+        <a href="#tujuan">Tujuan</a>
+        <a href="#pengurus">Pengurus</a>
+        <a href="#kegiatan">Kegiatan</a>
+        <a href="#benefit">Benefit</a>
+        <a href="#program">Program  Kerja</a>
+    </nav>
+    
+    <section id="tentang">
+        <h2>Tentang HPMMB</h2>
+        <p style="text-align: center; font-size: 1.2em; max-width: 800px; margin: 0 auto 30px;">
+            HPMMB adalah wadah bagi pelajar dan mahasiswa asal Maluk Benete yang menjadi tempat pulang untuk berkumpul, tempat berkembang untuk mengasah potensi, ruang bercerita dan berbagi pengalaman, sekaligus sarana belajar dan berprestasi. Di sini setiap anggota mendapatkan dukungan, informasi, inspirasi, serta berbagai kesempatan untuk tumbuh bersama, berkolaborasi, dan berkontribusi demi kemajuan diri sendiri maupun kemajuan Maluk Benete.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <a href="https://chat.whatsapp.com/HjtyfKC1ofwAtEktFHFM2J?mode=gi_t" class="btn-wa" target="_blank">📱 Join Grup WA</a>
+            <a href="#kegiatan" class="btn-wa" onclick="openModal('kegiatan-modal')">📅 Kegiatan Terlaksana</a>
+            <a href="https://whatsapp.com/channel/0029Vb7r18HJkK7EwOQxVq21" class="btn-wa" target="_blank">📢 Saluran Resmi</a>
+        </div>
+    </section>
+    
+    <section id="visi-misi">
+        <h2>Visi dan Misi</h2>
+        <p><strong>Visi:</strong> Menjadi wadah persatuan pelajar dan mahasiswa Maluk Benete yang unggul, berdaya saing, berkarakter, serta mampu berkontribusi nyata bagi diri, masyarakat, dan daerah.</p>
+        <p><strong>Misi:</strong> mengembangkan potensi pelajar dan mahasiswa Maluk Benete melalui penguatan kebersamaan, penyediaan ruang belajar dan berprestasi, pusat informasi yang bermanfaat, serta dorongan untuk berkolaborasi dan berkontribusi bagi kemajuan diri dan daerah.</p>
+    </section>
+    
+    <section id="tujuan">
+        <h2>Tujuan Organisasi</h2>
+        <ul>
+            <li>◼️ Meningkatkan kualitas pelajar dan mahasiswa Maluk Benete melalui kegiatan belajar, pelatihan, dan pengembangan potensi diri.</li>
+            <li>◼️ Membentuk karakter yang berintegritas, peduli, dan bertanggung jawab sebagai generasi penerus daerah.</li>
+            <li>◼️ Mewadahi kebersamaan, kolaborasi, dan kontribusi positif untuk kemajuan masyarakat serta pembangunan kecamatan Maluk.</li>
+        </ul>
+    </section>
+    
+    <section id="pengurus">
+        <h2>Struktur Pengurus HPMMB (2025/2026)</h2>
+        <div class="pengurus-grid">
+            <div class="pengurus-card">
+                <img src="https://i.ibb.co.com/dzH1HZY/Whats-App-Image-2026-03-24-at-14-15-26.jpg" alt="Whats-App-Image-2026-03-24-at-14-15-26" border="0"></a>
+                <div class="pengurus-info">
+                    <h4>Ketua Umum</h4>
+                    <p>Golden Wira Susanto</p>
+                </div>
+            </div>
+            <div class="pengurus-card">
+                <img src="https://i.ibb.co.com/W4GmGKNP/Whats-App-Image-2026-03-24-at-14-15-28-2.jpg" alt="Whats-App-Image-2026-03-24-at-14-15-28-2" border="0"></a>
+                <div class="pengurus-info">
+                    <h4>Sekretaris Jenderal</h4>
+                    <p>Akif El Yazeed Ibensani Putra</p>
+                </div>
+            </div>
+            <div class="pengurus-card">
+                <img src="https://i.ibb.co.com/0VzycW02/Whats-App-Image-2026-03-24-at-14-15-27.jpg" alt="Whats-App-Image-2026-03-24-at-14-15-27" border="0"></a>
+                <div class="pengurus-info">
+                    <h4>Bendahara Umum</h4>
+                    <p>Vina Nur Maulidiah</p>
+                </div>
+            </div>
+            <div class="pengurus-card">
+                <img src="https://i.ibb.co.com/ZzZm8L0b/Whats-App-Image-2026-03-24-at-14-15-27-1.jpg" alt="Whats-App-Image-2026-03-24-at-14-15-27-1" border="0"></a>
+                <div class="pengurus-info">
+                    <h4>Kepala Bidang PSDM</h4>
+                    <p>Rizki Maulana</p>
+                </div>
+            </div>
+            <div class="pengurus-card">
+                <img src="https://i.ibb.co.com/Sw2qsGNp/Whats-App-Image-2026-03-24-at-14-15-28.jpg" alt="Whats-App-Image-2026-03-24-at-14-15-28" border="0"></a>
+                <div class="pengurus-info">
+                    <h4>Kepala Bidang Sosmas</h4>
+                    <p>Sasmitha Destyana Desyah Putri.</p>
+                </div>
+            </div>
+            <div class="pengurus-card">
+                <img src="https://i.ibb.co.com/2rkpNgz/Whats-App-Image-2026-03-24-at-14-22-14.jpg" alt="Whats-App-Image-2026-03-24-at-14-22-14" border="0"></a>
+                <div class="pengurus-info">
+                    <h4>Kepala Bidang Medkom</h4>
+                    <p>Bela Aulia Amriadi</p>
+                </div>
+            </div>
+            <div class="pengurus-card">
+                <img src="https://i.ibb.co.com/6cngVz1X/Whats-App-Image-2026-03-24-at-14-15-28-1.jpg" alt="Whats-App-Image-2026-03-24-at-14-15-28-1" border="0"></a>
+                <div class="pengurus-info">
+                    <h4>Kepala Bidang DANUS</h4>
+                    <p>Aura Zukhrufinnisa</p>
+                </div>
+            </div>
+            <div class="pengurus-card">
+                <img src="https://i.ibb.co.com/RdqSBx9/Whats-App-Image-2026-03-24-at-18-28-00.jpg" alt="Whats-App-Image-2026-03-24-at-18-28-00" border="0"></a>
+                <div class="pengurus-info">
+                    <h4>Kepala Bidang Kesekretariatan</h4>
+                    <p>Qailla Fatimahtun Z.</p>
+                </div>
+            </div>
+<!-- PENGURUS 9 -->
+<div class="pengurus-card">
+    <img src="https://i.ibb.co.com/SwpGcMK5/Whats-App-Image-2026-03-24-at-18-42-49.jpg" alt="Whats-App-Image-2026-03-24-at-18-42-49" border="0"></a>
+    <div class="pengurus-info">
+        <h4>Dewan Pertimbangan Organisasi </h4>
+        <p>Muammar Bima Fahlevi</p>
+    </div>
+</div>
+
+<!-- PENGURUS 10 -->
+<div class="pengurus-card">
+    <img src="https://i.ibb.co.com/v6782s60/Whats-App-Image-2026-03-24-at-18-42-53.jpg" alt="Whats-App-Image-2026-03-24-at-18-42-53" border="0"></a>
+    <div class="pengurus-info">
+        <h4>Dewan Pertimbangan Organisasi </h4>
+        <p>Sulfi Wahyudi Ramadan </p>
+    </div>
+</div>
+
+<!-- PENGURUS 11 -->
+<div class="pengurus-card">
+    <img src="https://i.ibb.co.com/wNxqbVpF/Whats-App-Image-2026-03-24-at-18-42-55.jpg" alt="Whats-App-Image-2026-03-24-at-18-42-55" border="0"></a>
+    <div class="pengurus-info">
+        <h4>Dewan Pertimbangan Organisasi</h4>
+        <p>Noversa Wila</p>
+    </div>
+</div>
+        </div>
+    </section>
+    
+    <section id="kegiatan">
+        <h2>Kegiatan & Saluran Resmi</h2>
+        <div class="quick-links">
+            <div class="quick-card" onclick="openModal('kegiatan-modal')">
+                <h3>📅 Kegiatan Terlaksana</h3>
+                <p>Lihat dokumentasi kegiatan HPMMB<br>Klik untuk galeri foto</p>
+            </div>
+            <a href="https://whatsapp.com/channel/0029Vb7r18HJkK7EwOQxVq21" class="quick-card" target="_blank">
+                <h3>📢 Saluran Resmi</h3>
+                <p>Update terbaru HPMMB<br>Follow sekarang!</p>
+            </a>
+        </div>
+    </section>
+    
+    <!-- MODAL KEGIATAN -->
+    <div id="kegiatan-modal" class="kegiatan-modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('kegiatan-modal')">&times;</span>
+            <h2 style="color: var(--primary-dark-green); text-align: center; margin-bottom: 30px;">📸 Galeri Kegiatan HPMMB</h2>
+            <div class="kegiatan-item" onclick="openImage('https://via.placeholder.com/800x500/ff6b6b/white?text=Bakti+Sosial+2026')">
+                <img src="https://i.ibb.co.com/bjkTTfZJ/Whats-App-Image-2026-03-24-at-15-12-16.jpg" alt="Whats-App-Image-2026-03-24-at-15-12-16" border="0"></a>
+                <div>
+                    <h3>Malam Keakraban</h3>
+                    <p>salah satu kegiatan HPMMB yaitu makrab dimana tujuannya untuk silahturahmi dan menyatukan HPMMB menajdi satu keluarga yang kuat dan solid</p>
+                </div>
+            </div>
+            <div class="kegiatan-item" onclick="openImage('https://via.placeholder.com/800x500/4ecdc4/white?text=Workshop+AI')">
+                <img src="https://i.ibb.co.com/zH4xtFsS/Whats-App-Image-2026-03-24-at-15-13-15.jpg" alt="Whats-App-Image-2026-03-24-at-15-13-15" border="0"></a>
+                <div>
+                    <h3>UPGRADING HPMMB</h3>
+                    <p>UPGRADING merupakan kegiatan meningkatkan skill anggota HPMMB agar memudahkan dalam akademik dan dunia kerja </p>
+                </div>
+            </div>
+            <div class="kegiatan-item" onclick="openImage('https://via.placeholder.com/800x500/a8edea/white?text=Lomba+Debat')">
+                <img src="https://i.ibb.co.com/2Y8spW8L/Whats-App-Image-2026-03-24-at-15-31-05.jpg" alt="Whats-App-Image-2026-03-24-at-15-31-05" border="0"></a>
+                <div>
+                    <h3>HUT 17 Agustus</h3>
+                    <p>kegiatan memperingati HUT 17 Agustus yang melibatkan pemuda pemudi seluruh kecamatan maluk yang meliputi karang taruna, DKR, dan pemuda lainya</p>
+                </div>
+            </div>
+          <!-- ITEM 4 -->
+<div class="kegiatan-item" onclick="openImage('https://via.placeholder.com/800x500/f9ca24/white?text=Seminar+Nasional')">
+    <img src="https://i.ibb.co.com/ksBGcY0r/Whats-App-Image-2026-03-24-at-15-39-05.jpg" alt="Whats-App-Image-2026-03-24-at-15-39-05" border="0"></a>
+    <div>
+        <h3>Silahturahmi Industri</h3>
+        <p>salah satu agenda HPMMB dalam meperkenalkan pengurus dan anggota HPMMB kepada pihak PT AMMAN MINERAL NUSA TENGGARA yang dimana dalam hal ini agar tali silahturahmi tidak terputus</p>
+    </div>
+</div>
+
+<!-- ITEM 5 -->
+<div class="kegiatan-item" onclick="openImage('https://via.placeholder.com/800x500/6c5ce7/white?text=Turnamen+Olahraga')">
+    <img src="https://i.ibb.co.com/20Ds6qb4/Whats-App-Image-2026-03-24-at-15-44-56.jpg" alt="Whats-App-Image-2026-03-24-at-15-44-56" border="0"></a>
+    <div>
+        <h3>Safari Sekolah</h3>
+        <p>kegiatan kunjungan HPMMB tiap tahunnya menjelang Ujian Masuknya Perguruan Tinggi Untuk mengedukasi Pelajar SMA/SMK penting nya kuliah</p>
+    </div>
+</div>
+<!-- ITEM 6 -->
+<div class="kegiatan-item">
+    <img src="https://i.ibb.co.com/5gmz3N9g/Whats-App-Image-2026-03-24-at-15-44-56-1.jpg" alt="Whats-App-Image-2026-03-24-at-15-44-56-1" border="0"></a>
+    <div>
+        <h3>Clean Beach</h3>
+        <p>kegiatan yang dimana melibatkan warga Kecamatan maluk dalam aksi bersih bersih pantai maluk, bahwa pentingnya menjaga kebersihan pantai maluk. </p>
+    </div>
+</div>
+
+<!-- ITEM 7 -->
+<div class="kegiatan-item">
+    <img src="https://i.ibb.co.com/j9dXQNJG/Whats-App-Image-2026-03-24-at-15-47-52.jpg" alt="Whats-App-Image-2026-03-24-at-15-47-52" border="0"></a>
+    <div>
+        <h3>Olahraga HPMMB</h3>
+        <p>Kegiatan tiap 2 minggu 1 kali melakukan olahraga bersama Anggota HPMMB seperti bulu tangkis, futsal, voly, dll</p>
+    </div>
+</div>
+
+<!-- ITEM 8 -->
+<div class="kegiatan-item">
+    <img src="https://i.ibb.co.com/6cQfF9jS/Whats-App-Image-2026-03-24-at-15-50-44.jpg" alt="Whats-App-Image-2026-03-24-at-15-50-44" border="0"></a>
+    <div>
+        <h3>Mubes & Plantikan </h3>
+        <p>Agenda tahunan yang diadakan guna mencari ketua umum baru HPMMB guna meregnerasi dan melakukan Plantikan yang disaksikan oleh pemerintah kecamatan Maluk</p>
+    </div>
+</div>
+            <p style="color: var(--dark-gray); text-align: center; margin-top: 30px;">
+                 <strong>Jadi tunggu apa lagi</strong> Ayo Gabung HPMMB
+            </p>
+        </div>
+    </div>
+    
+    <section id="benefit">
+        <h2>Benefit Anggota HPMMB</h2>
+        <ul>
+            <li>🎓 Akses workshop dan pelatihan gratis</li>
+            <li>📚 Prioritas beasiswa, magang & PKL</li>
+            <li>💼 Penguatan CV dan portofolio organisasi</li>
+            <li>🤝 Networking alumni & industri</li>
+        </ul>
+    </section>
+    
+    <section id="program">
+    <h2>Program Kerja 1 Periode (2025/2026)</h2>
+    <div class="quick-links">
+        <!-- PSDM -->
+        <div class="quick-card" onclick="openModal('psdm-modal')">
+            <h3>🧠 PSDM</h3>
+            <p>Akademik Series<br>Klik untuk detail</p>
+        </div>
+        
+        <!-- MEDKOM -->
+        <div class="quick-card" onclick="openModal('medkom-modal')">
+            <h3>📸 MEDKOM</h3>
+            <p>Dokumentasi Kegiatan<br>Klik untuk detail</p>
+        </div>
+        
+        <!-- SOSMAS -->
+        <div class="quick-card" onclick="openModal('sosmas-modal')">
+            <h3>🤝 SOSMAS</h3>
+            <p>Pengabdian Masyarakat<br>Klik untuk detail</p>
+        </div>
+        
+        <!-- KESEKRETARIATAN -->
+        <div class="quick-card" onclick="openModal('kesek-modal')">
+            <h3>✉️ KESEKRETARIATAN</h3>
+            <p>Pelatihan Surat Menyurat<br>Klik untuk detail</p>
+        </div>
+        
+        <!-- DANUS -->
+        <div class="quick-card" onclick="openModal('danus-modal')">
+            <h3>💰 DANUS</h3>
+            <p>Dana Usaha<br>Klik untuk detail</p>
+        </div>
+    </div>
+</section>
+        <!-- MODAL PSDM -->
+<div id="psdm-modal" class="kegiatan-modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('psdm-modal')">&times;</span>
+        <h2 style="color: var(--primary-dark-green); text-align: center;">🧠 BIDANG PSDM</h2>
+        <p style="text-align: center; font-size: 1.1em; margin-bottom: 30px;">
+            Pengembangan Sumber Daya Manusia melalui workshop akademik dan pelatihan skill
+        </p>
+        <div class="proker-grid">
+            <div class="proker-card">
+                <img src="https://i.ibb.co.com/placeholder/akademik1.jpg" alt="Workshop Akademik" class="proker-foto">
+                <h4>Generation and Upgrading</h4>
+                <p>Generation dan Upgrading merupakan proses penting dalam pengembangan anggota organisasi. Regeneration bertujuan menyiapkan kader baru yang siap melanjutkan kepemimpinan dan menjaga nilai organisasi, sedangkan Upgrading berfokus pada peningkatan kemampuan dan keterampilan anggota agar lebih kompeten dalam menjalankan perannya.</p>
+            </div>
+            <div class="proker-card">
+                <img src="https://i.ibb.co.com/placeholder/skill1.jpg" alt="Public Speaking" class="proker-foto">
+                <h4>Mentoring</h4>
+                <p>Mentoring merupakan proses pembinaan dan pendampingan anggota oleh pihak yang lebih berpengalaman guna meningkatkan pemahaman, keterampilan, serta pengembangan diri dalam organisasi.</p>
+            </div>
+            <div class="proker-card">
+                <img src="https://i.ibb.co.com/placeholder/ai-workshop.jpg" alt="AI Workshop" class="proker-foto">
+                <h4>Ruang Seni Tari</h4>
+                <p>Ruang Pelatihan Seni dan Tari merupakan kegiatan pengembangan bakat anggota dalam bidang seni, khususnya tari, melalui latihan rutin yang bertujuan meningkatkan keterampilan, kreativitas, serta melestarikan budaya.</p>
+            </div>
+            <div class="proker-card">
+                <img src="https://i.ibb.co.com/placeholder/research.jpg" alt="Riset Method" class="proker-foto">
+                <h4>Ruang Minat dan Bakat</h4>
+                <p>Ruang pengembangan Minat dan Bakat merupakan kegiatan yang bertujuan untuk menggali, mengasah, dan meningkatkan potensi anggota sesuai dengan minat dan kemampuannya agar dapat berkembang secara optimal.</p>
+            </div>
+            <div class="proker-card">
+                <img src="https://i.ibb.co.com/placeholder/leadership.jpg" alt="Leadership" class="proker-foto">
+                <h4>Safari Sekolah</h4>
+                <p>Safari Sekolah merupakan kegiatan kunjungan ke sekolah-sekolah yang bertujuan untuk memberikan informasi dan wawasan seputar dunia perkuliahan, mulai dari jurusan, pengalaman kuliah, hingga motivasi kepada siswa untuk melanjutkan pendidikan ke jenjang yang lebih tinggi.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL MEDKOM -->
+<div id="medkom-modal" class="kegiatan-modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('medkom-modal')">&times;</span>
+        <h2 style="color: var(--primary-dark-green); text-align: center;">📸 BIDANG MEDKOM</h2>
+        <p style="text-align: center; font-size: 1.1em; margin-bottom: 30px;">
+            Dokumentasi kegiatan HPMMB melalui foto, video, dan publikasi media sosial
+        </p>
+        <div class="proker-grid">
+            <div class="proker-card">
+                <img src="https://i.ibb.co.com/placeholder/foto1.jpg" alt="Fotografi" class="proker-foto">
+                <h4>Digital Baranding</h4>
+                <p>Digital Branding merupakan upaya membangun dan memperkuat citra organisasi melalui media digital, seperti media sosial dan platform online, agar lebih dikenal luas, menarik, dan memiliki identitas yang konsisten.</p>
+            </div>
+            <div class="proker-card">
+                <img src="https://i.ibb.co.com/placeholder/video1.jpg" alt="Videografi" class="proker-foto">
+                <h4>Publikasi Kegiatan </h4>
+                <p>Publikasi Digital merupakan kegiatan penyebaran informasi dan promosi organisasi melalui media digital, seperti media sosial dan platform online, agar informasi dapat tersampaikan secara luas, cepat, dan efektif.</p>
+            </div>
+            <div class="proker-card">
+                <img src="https://i.ibb.co.com/placeholder/ig-post.jpg" alt="Social Media" class="proker-foto">
+                <h4>Publikasi Visual</h4>
+                <p>Publikasi Visual merupakan kegiatan penyampaian informasi melalui media visual, seperti desain grafis, poster, dan konten kreatif lainnya, agar pesan dapat disampaikan dengan lebih menarik dan mudah dipahami.</p>
+            </div>
+            <div class="proker-card">
+                <img src="https://i.ibb.co.com/placeholder/website.jpg" alt="Website Update" clRIZKI MAULANA
+https://codepen.io/RIZKI-MAULANA-the-bashfulass="proker-foto">
+                <h4>Media Promosi Kegiatan </h4>
+                <p>Media Promosi Kegiatan merupakan sarana yang digunakan untuk menyebarkan informasi dan menarik partisipasi terhadap suatu kegiatan melalui berbagai platform, baik digital maupun visual, agar kegiatan dapat dikenal dan diikuti oleh sasaran yang dituju.</p>
+            </div>
+            <div class="proker-card">
+                <img src="https://i.ibb.co.com/placeholder/graphic.jpg" alt="Graphic Design" class="proker-foto">
+                <h4>Graphic Design</h4>
+                <p>Graphic Design merupakan kegiatan pembuatan desain visual yang bertujuan untuk menyampaikan pesan secara menarik dan komunikatif melalui elemen seperti warna, tipografi, dan gambar.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL SOSMAS -->
+<div id="sosmas-modal" class="kegiatan-modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('sosmas-modal')">&times;</span>
+        <h2 style="color: var(--primary-dark-green); text-align: center;">🤝 BIDANG SOSMAS</h2>
+        <p style="text-align: center; font-size: 1.1em; margin-bottom: 30px;">
+            Pengabdian masyarakat melalui bakti sosial dan program pemberdayaan komunitas
+        </p>
+        <div class="proker-grid">
+            <div class="proker-card">
+                <img src="https://i.ibb.co.com/placeholder/baksos1.jpg" alt="Bakti Sosial" class="proker-foto">
+                <h4>Forum Masyarakat </h4>
+                <p>Forum Masyarakat merupakan wadah diskusi dan komunikasi antara organisasi dengan masyarakat untuk menyampaikan aspirasi, berbagi informasi, serta membangun hubungan yang baik dan kolaboratif.</p>
+            </div>
+            <div class="proker-card">
+                <img src="https://i.ibb.co.com/placeholder/cleanup.jpg" alt="Clean Up" class="proker-foto">
+                <h4>Sosialisasi Masyarakat </h4>
+                <p>Sosialisasi Masyarakat merupakan kegiatan penyampaian informasi dan edukasi kepada masyarakat mengenai suatu program, isu, atau kegiatan agar dapat dipahami dan diterima dengan baik.</p>
+            </div>
+            <div class="proker-card">
+                <img src="https://i.ibb.co.com/placeholder/education.jpg" alt="Edukasi" class="proker-foto">
+                <h4>Silahturahmi Industri</h4>
+                <p>Silaturahmi Industri merupakan kegiatan menjalin hubungan dan komunikasi dengan pihak industri atau dunia usaha untuk membangun kerja sama, berbagi informasi, serta membuka peluang kolaborasi.</p>
+            </div>
+            <div class="proker-card">
+                <img src="https://i.ibb.co.com/placeholder/posyandu.jpg" alt="Posyandu" class="proker-foto">
+                <h4>....</h4>
+                <p>....</p>
+            </div>
+            <div class="proker-card">
+                <img src="https://i.ibb.co.com/placeholder/treeplanting.jpg" alt="Tree Planting" class="proker-foto">
+                <h4>.....</h4>
+                <p>.....</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+          <!-- MODAL KESEKRETARIATAN -->
+<div id="kesek-modal" class="kegiatan-modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('kesek-modal')">&times;</span>
+        <h2 style="color: var(--primary-dark-green); text-align: center;">✉️ BIDANG KESEKRETARIATAN</h2>
+        <p style="text-align: center; font-size: 1.1em; margin-bottom: 30px;">
+            Pengelolaan administrasi organisasi termasuk surat menyurat, arsip, dan dokumentasi resmi HPMMB
+        </p>
+        <div class="proker-grid">
+            <div class="proker-card">
+                <img src="https://via.placeholder.com/300x150/2d7d40/ffffff?text=Surat+Menyurat" alt="Surat Menyurat" class="proker-foto">
+                <h4>Pelatihan Administrasi </h4>
+                <p>Pelatihan Administrasi merupakan kegiatan pembinaan yang bertujuan untuk meningkatkan kemampuan anggota dalam mengelola administrasi organisasi secara tertib, rapi, dan sistematis.</p>
+            </div>
+            <div class="proker-card">
+                <img src="https://via.placeholder.com/300x150/1a5f2a/ffffff?text=Arsip" alt="Pengelolaan Arsip" class="proker-foto">
+                <h4>Pengelolaan Arsip</h4>
+                <p>Pengelolaan Arsip merupakan kegiatan pengaturan, penyimpanan, dan pemeliharaan dokumen organisasi secara sistematis agar mudah diakses, aman, dan tertata dengan baik.</p>
+            </div>
+            <div class="proker-card">
+                <img src="https://via.placeholder.com/300x150/4ecdc4/ffffff?text=Admin" alt="Administrasi" class="proker-foto">
+                <h4>Update Database Anggota </h4>
+                <p>Update Database Anggota merupakan kegiatan pembaruan data anggota secara berkala untuk memastikan informasi yang tersimpan tetap akurat, lengkap, dan terkini.</p>
+            </div>
+            <div class="proker-card">
+                <img src="https://via.placeholder.com/300x150/a8edea/ffffff?text=Database" alt="Database" class="proker-foto">
+                <h4>.....</h4>
+                <p>......</p>
+            </div>
+            <div class="proker-card">
+                <img src="https://via.placeholder.com/300x150/f9ca24/ffffff?text=Rapat" alt="Notulen" class="proker-foto">
+                <h4>......</h4>
+                <p>.....</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL DANUS -->
+<div id="danus-modal" class="kegiatan-modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('danus-modal')">&times;</span>
+        <h2 style="color: var(--primary-dark-green); text-align: center;">💰 BIDANG DANUS</h2>
+        <p style="text-align: center; font-size: 1.1em; margin-bottom: 30px;">
+            Pengelolaan dana melalui upaya usaha mandiri HPMMB dan beberapa program kerja 
+        </p>
+        <div class="proker-grid">
+            <div class="proker-card">
+                <img src="...... alt="Sponsorship" class="proker-foto">
+                <h4>Gema Ramadhan HPMMB </h4>
+                <p>Berjualan takjil dengan beberapa produk yang berpotensi untuk dijual di bulan Ramadhan</p>
+            </div>
+            <div class="proker-card">
+                <img src="https://via.placeholder.com/300x150/4ecdc4/ffffff?text=MoU" alt="MoU Industri" class="proker-foto">
+                <h4>Danus Goes To CFD & Event</h4>
+                <p>Berjualan di kegiatan rutin mingguan yaitu CFD & event yang diselenggarakan beberapa organisasi/instansi serta event HPMMB itu sendiri</p>
+            </div>
+            <div class="proker-card">
+                <img src="https://via.placeholder.com/300x150/ff6b6b/ffffff?text=Merch" alt="Usaha Mandiri" class="proker-foto">
+                <h4>Usaha Mandiri</h4>
+                <p>Jualan merchandise HPMMB</p>
+            </div>
+            <div class="proker-card">
+                <img src="https://via.placeholder.com/300x150/6c5ce7/ffffff?text=Laporan" alt="Keuangan" class="proker-foto">
+                <h4>Laporan Keuangan</h4>
+                <p>Transparansi anggaran bulanan</p>
+            </div>
+            <div class="proker-card">
+                <img src="https://via.placeholder.com/300x150/a8edea/ffffff?text=Crowdfund" alt="Crowdfunding" class="proker-foto">
+                <h4>Crowdfunding</h4>
+                <p>Kampanye dana kegiatan</p>
+            </div>
+        </div>
+    </div>
+</div>
+    </section>
+    
+    <footer>
+        <p>© 2026 HPMMB Maluk-Benete | Maluk, KSB, NTB | sekretariat asrama KSB, Mataram, NTB | +62 853-3882-5021 |
+        <a href="https://chat.whatsapp.com/HjtyfKC1ofwAtEktFHFM2J?mode=gi_t" target="_blank">Join WA Group</a> | 
+        <a href=https://www.instagram.com/hpmmb?igsh=MWV1cHlmMmplMmp4cg== target="_blank">Instagram HPMMB</a></p>
+    </footer>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+        function openImage(imgSrc) {
+            window.open(imgSrc, '_blank');
+        }
+        window.onclick = function(event) {
+            if (event.target.classList.contains('kegiatan-modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
+    
+  </body>
+  
+</html>
